@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {AgGridModule} from 'ag-grid-angular/main';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    AgGridModule.withComponents(
+      [AppComponent]
+    ),
     FormsModule,
     HttpModule
   ],
