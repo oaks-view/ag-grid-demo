@@ -1,0 +1,18 @@
+<div class="grid-container">
+    <h4>Sync Fusion date picker</h4>
+    <div>
+        <input type="text" [(ngModel)]="selectedDate" ej-datepicker />
+        <h4>You have selected the date <span class="selectedDate">{{selectedDate}}</span></h4>
+    </div>
+</div>
+<div class="grid-container">
+    <ej-grid [allowPaging]="true" [allowSorting]="true" [allowFiltering]="true" [dataSource]="applicationUsers">
+        <e-columns>
+            <e-column field="name" headerText="User name" width="75" textAlign="left"></e-column>
+            <e-column field="age" headerText="Age" width="80"></e-column>
+            <e-column field="tribe" headerText="Tribe" width="75" textAlign="left"></e-column>
+            <e-column field="sex" headerText="Sex" width="75" format="{0:C}" textAlign="left"></e-column>
+            <!-- <e-column field="OrderDate" headerText="Order Date" width="80" format="{0:MM/dd/yyyy}" textAlign="right"></e-column> -->
+        </e-columns>
+    </ej-grid>
+</div>

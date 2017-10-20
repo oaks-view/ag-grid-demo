@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { ApplicationUser } from './models/applicationUser';
-import { Tribe } from './models/tribe';
-import {  Sex } from './models/sex';
+import { ApplicationUser } from './../models/applicationUser';
+import { Tribe } from './../models/tribe';
+import {  Sex } from './../models/sex';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css', './navbar.css']
 })
 export class AppComponent {
   title = 'app works!';
