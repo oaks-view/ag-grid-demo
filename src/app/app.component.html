@@ -2,9 +2,29 @@
   Using ag-grid system with angular 2 demo
 </h1>
 <div>
-  <ag-grid-angular style="width: 100%; height: 500px;" class="ag-fresh" 
-  [rowData]="appUsers" [columnDefs]="columnHeaders"
-  [enableSorting]="enableSorting"
-  [enableFilter]="true">
+  <ag-grid-angular style="width: 100%; height: 500px;" class="ag-bootstrap" [rowData]="appUsers" [columnDefs]="columnHeaders"
+    [enableSorting]="enableSorting" [enableFilter]="true" [rowSelection]="rowSelection" [rowDeselection]="rowDeselection" [suppressRowClickSelection]="suppressRowClickSelection">
+  </ag-grid-angular>
+</div>
+
+<div style="border: solid black 2px">
+  <ag-grid-angular style="width: 100%; height: 500px;" class="ag-bootstrap"
+    (gridReady)="onGridReady($event)"
+    (cellClicked)="onCellClicked($event)"
+    [enableColResize]="true"
+    [rowData]="appUsers" [enableSorting]="enableSorting"
+    [enableFilter]="true" [rowSelection]="rowSelection" 
+    [rowDeselection]="rowDeselection" 
+    [suppressRowClickSelection]="suppressRowClickSelection">
+
+    <ag-grid-column  [checkboxSelection]="true" [editable]="true" headerName="User Name" 
+    field="name" [width]="150"
+    headerCheckboxSelection="true"
+    headerCheckboxSelectionFilteredOnly="true"
+    ></ag-grid-column>
+    <ag-grid-column headerName="User Age" field="age" [width]="150"></ag-grid-column>
+    <ag-grid-column headerName="Tribe" field="tribe" [width]="150"></ag-grid-column>
+    <ag-grid-column headerName="Sex" field="sex" [width]="150"></ag-grid-column>
+
   </ag-grid-angular>
 </div>
